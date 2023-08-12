@@ -41,10 +41,8 @@ public class CustomerController {
 
     @PostMapping("/api/customers/add")
     public ResponseEntity<Customer> createCustomer(@RequestBody Customer customer) {
-        /*
         Customer _customers = customerRepository
-                .save(new Customer(customer.getFirst_name(), customer.getLast_name(), customer.getDate_joined(), customer.getPhone_number()));
-        */
+                .save(new Customer(customer.getFirst_name(), customer.getLast_name(), customer.getDate_joined()));
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 }

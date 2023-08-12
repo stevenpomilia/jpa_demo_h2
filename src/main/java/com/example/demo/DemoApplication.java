@@ -15,11 +15,11 @@ public class DemoApplication {
 	@Bean
 	CommandLineRunner commandLineRunner(CustomerRepository customerRepository) {
 		return arg -> {
-			/*
-			Customer john = new Customer("John", "Alexander", "07/28/2023", "8675309");
+			/* optionally use in addition to or in place of data.sql seeding
+			Customer john = new Customer("John", "Alexander", "07/28/2023");
 			customerRepository.save(john);
 
-			Customer jenny = new Customer("Jenny", "Smith", "07/28/2023", "8675309");
+			Customer jenny = new Customer("Jenny", "Smith", "07/28/2023");
 			customerRepository.save(jenny);
 			*/
 
