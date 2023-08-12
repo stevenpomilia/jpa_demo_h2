@@ -15,11 +15,13 @@ public class DemoApplication {
 	@Bean
 	CommandLineRunner commandLineRunner(CustomerRepository customerRepository) {
 		return arg -> {
+			/*
 			Customer john = new Customer("John", "Alexander", "07/28/2023", "8675309");
 			customerRepository.save(john);
 
 			Customer jenny = new Customer("Jenny", "Smith", "07/28/2023", "8675309");
 			customerRepository.save(jenny);
+			*/
 
 			// Q: see if you can figure out how to create Order records, next....
 		};
