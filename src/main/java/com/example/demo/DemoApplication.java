@@ -15,15 +15,20 @@ public class DemoApplication {
 	@Bean
 	CommandLineRunner commandLineRunner(CustomerRepository customerRepository) {
 		return arg -> {
-			/* optionally use in addition to or in place of data.sql seeding
+			// optionally use in addition to or in place of data.sql seeding
 			Customer john = new Customer("John", "Alexander", "07/28/2023");
 			customerRepository.save(john);
 
 			Customer jenny = new Customer("Jenny", "Smith", "07/28/2023");
 			customerRepository.save(jenny);
-			*/
 
 			// Q: see if you can figure out how to create Order records, next....
+			// order table
+			// unique id
+			// foreign key to the customer record
+			// shipped_location column for where the order gets sent to
+			// purchase_total for how much the customer spent
+			// establish the "relationship" between customer table and orders table
 		};
 	}
 
