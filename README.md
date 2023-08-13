@@ -5,8 +5,9 @@ Demonstration of a REST service that interfaces with an [H2 database](https://ww
 ## Features
 
 * Starts an embedded H2 in-memory database
-* Seeds an empty "customer" data, either with `data.sql` and/or with `CommandLineRunner`
-* Provides a web-based H2 console at [localhost:8080/h2-console](localhost:8080/h2-console])
+* Seeds an empty "customer" database table, either with `data.sql` and/or with `CommandLineRunner`
+* Provides a web-based H2 console at [localhost:8080/h2-console](localhost:8080/h2-console]),
+or at the port specified in `application.properties`
 
 ## Configuration
 
