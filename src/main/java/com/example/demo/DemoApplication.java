@@ -24,11 +24,11 @@ public class DemoApplication {
 
 			// Q: see if you can figure out how to create Order records, next....
 			// order table
-			// unique id
+			// unique id (VARCHAR)
 			// foreign key to the customer record
-			// shipped_location column for where the order gets sent to
-			// purchase_total for how much the customer spent
-			// establish the "relationship" between customer table and orders table
+			// shipped_location column for where the order gets sent to (VARCHAR)
+			// purchase_total for how much the customer spent (VARCHAR)
+			// establish the "relationship" between customer table and orders table e.g. @OneToMany @ManyToOne
 		};
 	}
 
