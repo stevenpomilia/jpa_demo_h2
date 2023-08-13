@@ -23,7 +23,7 @@ public class DemoApplication {
 			customerRepository.save(jenny);
 
 			// Q: see if you can figure out how to create Order records, next....
-			// order table
+			// orders table (not "order" table because that word is a reserved SQL keyword)
 			// unique id (VARCHAR)
 			// foreign key to the customer record
 			// shipped_location column for where the order gets sent to (VARCHAR)
