@@ -13,7 +13,7 @@ public class DemoApplication {
 	}
 
 	@Bean
-	CommandLineRunner commandLineRunner(CustomerRepository customerRepository) {
+	CommandLineRunner commandLineRunner(CustomerRepository customerRepository, OrderRepository orderRepository) {
 		return arg -> {
 			// optionally use in addition to or in place of data.sql seeding
 			Customer john = new Customer("John", "Alexander", "07/28/2023");
@@ -29,6 +29,12 @@ public class DemoApplication {
 			// shipped_location column for where the order gets sent to (VARCHAR)
 			// purchase_total for how much the customer spent (VARCHAR)
 			// establish the "relationship" between customer table and orders table e.g. @OneToMany @ManyToOne
+
+			Order forJohn = new Order(john, "Charleston 29408", "$100.00");
+			orderRepository.save(forJohn);
+
+			Order forJenny = new Order(jenny, "North Charleston 29406", "$110.00");
+			orderRepository.save(forJenny);
 		};
 	}
 
