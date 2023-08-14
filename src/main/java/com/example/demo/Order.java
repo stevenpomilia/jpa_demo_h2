@@ -35,7 +35,8 @@ public class Order {
         // This is the default constructor. It is necessary for SpringBoot.
     };
 
-    public Order(String shipped_location, String purchase_total) {
+    public Order(Customer customer, String shipped_location, String purchase_total) {
+        this.customer = customer;
         this.shipped_location = shipped_location;
         this.purchase_total = shipped_location;
     }
