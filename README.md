@@ -29,7 +29,7 @@ See the following:
 
 ## Practice
 
-* Attempt to build a `orders` table and relate it to the `customer` table.
+* Attempt to build an `orders` table and relate it to the `customer` table.
 * Add additional REST services for querying orders. (Hint: Research @OneToMany and @ManyToOne annotations, and make use of them.)
 
 ## Endnotes
