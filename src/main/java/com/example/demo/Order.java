@@ -1,20 +1,19 @@
 package com.example.demo;
 
-import java.util.List;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
 // This represents customer table in Java. Refer to example before.
 @Data
-@Entity(name = "Customer")
-@Table(name = "Customer") // db: "customer"
-public class Customer {
+@Entity(name = "order")
+@Table(name = "orders") // db: "customer"
+public class Order {
     @Id // Specifies the Table ID
     @GeneratedValue // We can also use specified sequences but we wont get into this. For now we
                     // will just generate this automatically.
@@ -23,24 +22,21 @@ public class Customer {
     private long id;
 
     @Column(nullable = false, columnDefinition = "TEXT")
-    private String first_name; // alt: firstName -> db: first_name
+    String shipped_location;
 
     @Column(nullable = false, columnDefinition = "TEXT")
-    private String last_name; // alt: lastName -> db: last_name
+    String purchase_total;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
-    private String date_joined;
+    @ManyToOne
+    @JoinColumn(name = "customer_id", nullable = false)
+    private Customer customer;
 
-    @OneToMany(mappedBy = "customer")
-    private List<Order> orders;
-
-    public Customer() {
+    public Order() {
         // This is the default constructor. It is necessary for SpringBoot.
     };
 
-    public Customer(String first_name, String last_name, String date_joined) {
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.date_joined = date_joined;
+    public Order(String shipped_location, String purchase_total) {
+        this.shipped_location = shipped_location;
+        this.purchase_total = shipped_location;
     }
 }
