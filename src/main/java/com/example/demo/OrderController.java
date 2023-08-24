@@ -41,8 +41,9 @@ public class OrderController {
 
     @PostMapping("/api/orders/add")
     public ResponseEntity<Order> createOrder(@RequestBody Order order) {
+        Customer c = new Customer();
         Order _orders = orderRepository
-                .save(new Order(order.getPurchase_total(), order.getShipped_location()));
+                .save(new Order(c, order.getPurchase_total(), order.getShipped_location()));
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 }
