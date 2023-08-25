@@ -14,6 +14,7 @@ or at the port specified in `application.properties`
 See the following:
 * `application.properties` file
 * `data.sql` file
+* `build.gradle`
 
 ## References
 
