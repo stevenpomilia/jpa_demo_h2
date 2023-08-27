@@ -1,4 +1,4 @@
 -- executed if there is a data.sql
-DROP TABLE IF EXISTS customer CASCADE;
-CREATE TABLE customer(id INT, first_name VARCHAR(255), last_name VARCHAR(255), date_joined VARCHAR(255));
+DROP TABLE IF EXISTS virtual_pet CASCADE;
+CREATE TABLE virtual_pet(id INT, name VARCHAR(255), description VARCHAR(255), hunger INT, thirst INT, boredom INT);
 

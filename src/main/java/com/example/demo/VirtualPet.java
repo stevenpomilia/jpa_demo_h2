@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import jakarta.annotation.sql.DataSourceDefinition;
+// import jakarta.annotation.sql.DataSourceDefinition;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,9 +10,9 @@ import lombok.Data;
 
 // This represents customer table in Java. Refer to example before.
 @Data
-@Entity(name = "Customer")
-@Table(name = "Customer") // db: "customer"
-public class Customer {
+@Entity(name = "virtual_pet")
+@Table(name = "virtual_pet") // db: "customer"
+public class VirtualPet {
     @Id // Specifies the Table ID
     @GeneratedValue // We can also use specified sequences but we wont get into this. For now we
                     // will just generate this automatically.
@@ -21,21 +21,30 @@ public class Customer {
     private long id;
 
     @Column(nullable = false, columnDefinition = "TEXT")
-    private String first_name; // alt: firstName -> db: first_name
+    private String name; // alt: firstName -> db: first_name
 
     @Column(nullable = false, columnDefinition = "TEXT")
-    private String last_name; // alt: lastName -> db: last_name
+    private String description; // alt: lastName -> db: last_name
 
     @Column(nullable = false, columnDefinition = "TEXT")
-    private String date_joined;
+    private int hunger;
 
-    public Customer() {
+    @Column(nullable = false, columnDefinition = "TEXT")
+    private int thirst;
+
+    @Column(nullable = false, columnDefinition = "TEXT")
+    private int boredom;
+
+    public VirtualPet() {
         // This is the default constructor. It is necessary for SpringBoot.
     };
 
-    public Customer(String first_name, String last_name, String date_joined) {
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.date_joined = date_joined;
+    public VirtualPet(String name, String description, int hunger, int thirst, int boredom) {
+        this.name = name;
+        this.description = description;
+        this.hunger = hunger;
+        this.thirst = thirst;
+        this.boredom = boredom;
+
     }
 }
